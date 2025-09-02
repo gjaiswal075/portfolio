@@ -1,0 +1,1107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>G Jaiswal Ventures</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html, body {
+      height: 100%;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      scroll-behavior: smooth;
+    }
+
+
+    body {
+      position: relative;
+      min-height: 100%;
+      margin: 0;
+      color: #fff;
+      overflow-x: hidden;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    .hero-section {
+      background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)),
+                  url('GettyImages-1207093259_edited_edited.jpg') no-repeat center center/cover;
+      padding: 10rem 3.75rem 5rem;
+      margin-top: 5rem;
+      max-width: 100%;
+      color: #fff;
+    }
+
+    header {
+      background-color: #000;
+      padding: 1.25rem 3.75rem;
+      position: fixed;
+      width: 100%;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 0.125rem 0.3125rem rgba(0,0,0,0.6);
+      backdrop-filter: blur(0.375rem);
+      transition: box-shadow 0.3s, background-color 0.3s;
+    }
+
+    .nav-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      width: 100%;
+    }
+
+    .branding {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      height: 4rem;
+    }
+
+    .branding img {
+      width: 10rem;
+      height: 10rem;
+      object-fit: contain;
+    }
+
+    .branding-text {
+      display: flex;
+      flex-direction: column;
+      gap: 0.15rem;
+    }
+
+    .branding-text h1 {
+      font-size: 1.375rem;
+      font-weight: bold;
+      line-height: 1.1;
+      margin-bottom: 0;
+    }
+
+    .branding-text span {
+      font-size: 0.8125rem;
+      color: #bbb;
+      line-height: 1.2;
+      margin-top: 0.15rem;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 3.125rem;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: #f0f0f0;
+      font-size: 1rem;
+      transition: all 0.3s ease;
+      padding-bottom: 0.125rem;
+      border-bottom: 0.125rem solid transparent;
+    }
+
+    .nav-links a:hover,
+    .nav-links a.active {
+      color: #ffa500;
+      border-bottom: 0.125rem solid #ffa500;
+    }
+
+    .hero-main {
+      padding: 6rem 0;
+      max-width: 62.5rem;
+      margin: 0 auto;
+    }
+
+    .hero-main h2 {
+      font-size: 1.25rem;
+      color: #c0c0c0;
+      margin-bottom: 1.25rem;
+      letter-spacing: 0.0625rem;
+    }
+
+    .hero-main h1 {
+      font-size: 3.75rem;
+      color: #e6e6e6;
+      line-height: 1.3;
+    }
+
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      cursor: pointer;
+      gap: 0.3rem;
+      margin-left: auto;
+    }
+
+    .hamburger span {
+      height: 0.2rem;
+      width: 1.5rem;
+      background: #fff;
+      display: block;
+      border-radius: 0.125rem;
+    }
+
+    .close-icon {
+      display: none;
+      font-size: 2rem;
+      color: white;
+      position: absolute;
+      top: 1rem;
+      right: 1.5rem;
+      z-index: 1001;
+      cursor: pointer;
+    }
+
+    .about-section {
+      background-color: #f0f0f0;
+      padding: 6rem 3rem;
+      color: #333;
+      box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.05);
+      border-top: 1px solid #ddd;
+    }
+
+    .about-images {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 2rem;
+      margin-top: 3rem;
+      flex-wrap: wrap;
+      padding: 0 1rem;
+    }
+
+    .about-images img {
+      width: 30%;
+      max-width: 20rem;
+      height: auto;
+      border-radius: 1rem;
+      box-shadow: 0 0.5rem 1.5rem rgba(0, 0, 0, 0.15);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .about-images img:hover {
+      transform: scale(1.03);
+      box-shadow: 0 0.75rem 2rem rgba(0, 0, 0, 0.2);
+    }
+
+    @media (max-width: 48rem) {
+      .about-images {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .about-images img {
+        width: 80%;
+        max-width: 90%;
+      }
+    }
+
+    .about-container {
+      display: flex;
+      justify-content: center;
+      max-width: 75rem;
+      margin: 0 auto;
+      padding: 0 2rem;
+    }
+
+    .about-content {
+      flex: 1;
+      margin: 0;
+      text-align: center;
+    }
+
+    .about-content h2 {
+      font-size: 2.5rem;
+      margin-bottom: 2rem;
+      color: #ffa500;
+      position: relative;
+      text-align: center;
+    }
+
+    .about-content h2::after {
+      content: '';
+      display: block;
+      width: 4rem;
+      height: 0.25rem;
+      background: #ffa500;
+      margin: 0.5rem auto 1.5rem;
+      border-radius: 1rem;
+    }
+
+    .about-content p {
+      font-size: 1.125rem;
+      line-height: 1.8;
+      margin-bottom: 1.5rem;
+      color: #444;
+      max-width: 60rem;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .section-divider {
+      height: 5rem;
+      background: linear-gradient(to bottom, #f0f0f0 0%, #ffffff 100%);
+    }
+
+    .section-divider-projects {
+      height: 2rem;
+      background: linear-gradient(to bottom, #ffffff 0%, #f9f9f9 100%);
+    }
+
+
+    .portfolio-section {
+      padding: 6rem 3rem 3rem 3rem;
+      background-color: #fff;
+      color: #333;
+    }
+
+    .portfolio-header {
+      text-align: center;
+      margin-bottom: 3rem;
+    }
+
+    .portfolio-header h2 {
+      font-size: 2.5rem;
+      margin-bottom: 2rem;
+      color: #ffa500;
+      position: relative;
+      text-align: center;
+    }
+
+    .portfolio-header h2::after {
+      content: '';
+      display: block;
+      width: 4rem;
+      height: 0.25rem;
+      background: #ffa500;
+      margin: 0.5rem auto 1.5rem;
+      border-radius: 1rem;
+    }
+
+    .portfolio-header h3 {
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .portfolio-header p {
+      max-width: 60rem;
+      margin: 0 auto;
+      font-size: 1.125rem;
+      color: #555;
+    }
+
+    .portfolio-category h4 {
+      font-size: 1.75rem;
+      margin: 5rem 0 3rem;
+      color: #222;
+      text-align: center;
+    }
+
+    .portfolio-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 2rem;
+      max-width: 65rem;
+      margin: 0 auto 3rem;
+    }
+
+    .past-projects-grid {
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      max-width: 75rem;
+      margin: 0 auto;
+    }
+
+    .portfolio-card {
+      background: #fafafa;
+      padding: 2rem;
+      border-radius: 0.75rem;
+      box-shadow: 0 0.25rem 1rem rgba(0, 0, 0, 0.06);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      height: 100%;
+      min-height: 10rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .portfolio-card:hover {
+      transform: translateY(-0.5rem);
+      box-shadow: 0 0.5rem 1.25rem rgba(0, 0, 0, 0.08);
+    }
+
+    .portfolio-card h5 {
+      color: #ffa500;
+      font-size: 1.25rem;
+      margin-bottom: 1rem;
+    }
+
+    .portfolio-card p,
+    .portfolio-card ul {
+      font-size: 1rem;
+      line-height: 1.6;
+      color: #444;
+    }
+
+    .portfolio-card ul {
+      padding-left: 1.25rem;
+      list-style: disc;
+    }
+
+    .past-project-card {
+      max-width: 35rem;
+      margin: 0 auto;
+      min-height: 15rem;
+    }
+
+    @media (max-width: 48rem) {
+      .nav-container {
+        display: grid;
+        grid-template-columns: auto 1fr auto;
+        align-items: center;
+      }
+      .branding {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        justify-content: flex-start;
+        grid-column: 1 / 3;
+      }
+      .branding-text {
+        display: flex;
+        flex-direction: column;
+        gap: 0.12rem;
+        white-space: normal;
+        overflow: visible;
+        text-overflow: unset;
+      }
+      .branding-text h1 {
+        font-size: 1rem;
+      }
+
+      .branding-text span {
+        font-size: 0.7rem;
+      }
+      .hamburger {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        grid-column: 3 / 4;
+        margin-left: 1.5rem;
+      }
+      .hero-section {
+        padding: 7.5rem 1.25rem 3.75rem;
+      }
+      .hero-main h1 {
+        font-size: 2.5rem;
+      }
+      .nav-links {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        margin-top: 1rem;
+      }
+      .nav-links.active {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+      }
+      .nav-links {
+        margin-top: 0.625rem;
+        flex-wrap: wrap;
+        gap: 0.9375rem;
+      }
+      .nav-links a {
+        border-bottom: none;
+        padding-bottom: 0.25rem;
+      }
+      .nav-links a:hover,
+      .nav-links a.active {
+        border-bottom: 0.125rem solid #ffa500;
+        color: #ffa500;
+      }
+      .about-container {
+        flex-direction: column;
+        text-align: center;
+      }
+      .about-content {
+        text-align: left;
+      }
+      .portfolio-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .nav-container.nav-open .branding {
+        display: none;
+      }
+      .nav-container.nav-open .hamburger {
+        display: none;
+      }
+    }
+    .projects-section {
+      padding: 0rem 3rem;
+      background-color: #ffffff;
+      color: #333;
+    }
+
+    .projects-header {
+      text-align: center;
+      margin-bottom: 3rem;
+    }
+
+    .projects-header h2 {
+      margin-top: 5rem;
+      font-size: 2.5rem;
+      color: #ffa500;
+      margin-bottom: 0.5rem;
+      position: relative;
+    }
+
+    .projects-header h2::after {
+      content: '';
+      display: block;
+      width: 4rem;
+      height: 0.25rem;
+      background: #ffa500;
+      margin: 0.5rem auto 1.5rem;
+      border-radius: 1rem;
+    }
+
+    .projects-header h3 {
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .projects-header p {
+      max-width: 60rem;
+      margin: 0 auto;
+      font-size: 1.125rem;
+      color: #555;
+    }
+
+    .project-category h4 {
+      font-size: 1.75rem;
+      margin: 4rem 0 2rem;
+      text-align: center;
+      color: #222;
+    }
+
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 2rem;
+      max-width: 75rem;
+      margin: 0 auto;
+    }
+
+    .project-card {
+      background: #fff;
+      border-radius: 0.75rem;
+      padding: 2rem;
+      box-shadow: 0 0.25rem 1rem rgba(0,0,0,0.06);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .project-card:hover {
+      transform: translateY(-0.5rem);
+      box-shadow: 0 0.5rem 1.25rem rgba(0,0,0,0.08);
+    }
+
+    .project-card h5 {
+      color: #ffa500;
+      font-size: 1.25rem;
+      margin-bottom: 1rem;
+    }
+
+    .project-card ul {
+      padding-left: 1.25rem;
+      list-style: disc;
+      margin-bottom: 1rem;
+    }
+
+    .project-card ul li {
+      font-size: 1rem;
+      line-height: 1.6;
+      color: #444;
+    }
+
+    .project-card p {
+      font-size: 1rem;
+      line-height: 1.6;
+      color: #444;
+    }
+
+    .project-badge {
+      align-self: flex-start;
+      background-color: #ffa500;
+      color: white;
+      font-size: 0.75rem;
+      padding: 0.25rem 0.75rem;
+      border-radius: 999px;
+      margin-bottom: 0.75rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.05rem;
+    }
+      .project-link-button {
+    display: inline-block;
+    margin-top: 0.5rem;
+    padding: 0.5rem 1rem;
+    background-color: #ffa500;
+    color: white;
+    text-decoration: none;
+    border-radius: 2rem;
+    font-weight: bold;
+    font-size: 0.95rem;
+    transition: background-color 0.3s ease;
+  }
+
+  .project-link-button:hover {
+    background-color: #e69500;
+  }
+
+    .site-footer {
+      background-color: #111;
+      color: #eee;
+      padding: 3rem 2rem;
+      text-align: center;
+      font-size: 1rem;
+      border-top: 0.125rem solid #333;
+    }
+
+    .site-footer .footer-content {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .site-footer .footer-content h4 {
+      font-size: 1.75rem;
+      color: #ffa500;
+      margin-bottom: 1rem;
+      letter-spacing: 0.05rem;
+    }
+
+    .site-footer .footer-content p {
+      color: #bbb;
+      font-size: 1.0625rem;
+    }
+
+    .site-footer .footer-content p strong {
+      color: #fff;
+    }
+
+    .contact-form {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      margin-top: 2rem;
+    }
+
+    .contact-form input,
+    .contact-form textarea {
+      padding: 0.75rem 1rem;
+      border: none;
+      border-radius: 0.5rem;
+      font-size: 1rem;
+      resize: none;
+    }
+
+    .contact-form button {
+      background-color: #ffa500;
+      color: #fff;
+      border: none;
+      padding: 0.75rem 1.5rem;
+      font-size: 1rem;
+      border-radius: 2rem;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .contact-form button:hover {
+      background-color: #e69500;
+    }
+
+    .carousel-container {
+      width: 100%;
+      margin: 0rem auto;
+      overflow: hidden;
+      position: relative;
+      text-align: center;
+      min-height: 30rem;
+      background: linear-gradient(to bottom, #f9f9f9, #ffffff);
+      padding: 4rem;
+    }
+
+    .carousel-slide {
+      display: none;
+      flex-direction: column;
+      align-items: center;
+      min-height: 25rem;
+      justify-content: center;
+    }
+
+    .carousel-slide.active {
+      display: flex;
+    }
+
+    .carousel-slide img {
+      width: 100%;
+      max-width: 30rem;
+      height: 20rem;
+      object-fit: cover;
+      border-radius: 0.5rem;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+
+    .carousel-caption {
+      margin: 2rem auto;
+      padding: 0 2rem;
+      max-width: 40rem;
+      font-size: 1.125rem;
+      color: #444;
+      line-height: 1.6;
+    }
+
+
+    .carousel-dots {
+      margin-top: 1rem;
+      display: flex;
+      justify-content: center;
+      gap: 0.5rem;
+    }
+
+    .carousel-dots .dot {
+      width: 0.5rem;
+      height: 0.5rem;
+      border-radius: 50%;
+      background-color: #ccc;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    .carousel-dots .dot.active {
+      background-color: #ffa500;
+    }
+
+    .contact-section {
+      padding: 3rem 3rem 6rem 3rem;
+      background-color: #f9f9f9;
+      color: #333;
+      text-align: center;
+    }
+
+    .contact-form-wrapper {
+      max-width: 40rem;
+      margin: 2rem auto 0;
+    }
+
+    .contact-form input,
+    .contact-form textarea {
+      width: 100%;
+      padding: 0.75rem 1rem;
+      margin-bottom: 1rem;
+      border-radius: 0.5rem;
+      border: 1px solid #ccc;
+      font-size: 1rem;
+      resize: none;
+    }
+
+    .contact-form button {
+      background-color: #ffa500;
+      color: #fff;
+      border: none;
+      padding: 0.75rem 2rem;
+      font-size: 1rem;
+      border-radius: 2rem;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .contact-form button:hover {
+      background-color: #e69500;
+    }
+
+    .minimal-footer {
+      background-color: #000;
+      color: #ccc;
+      text-align: center;
+      padding: 1.5rem 1rem;
+      font-size: 0.95rem;
+    }
+        @media (max-width: 48rem) {
+      .carousel-container {
+        padding: 2rem 1rem;
+      }
+
+      .carousel-caption {
+        margin: 2rem 1rem;
+        font-size: 1rem;
+      }
+
+      .carousel-slide img {
+        max-width: 90%;
+        height: auto;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="nav-container">
+      <div class="branding">
+        <img src="logo.png" alt="Logo">
+        <div class="branding-text
+        ">
+          <h1>G Jaiswal Ventures</h1>
+          <span>Bridging Energy, Trade & Infrastructure</span>
+        </div>
+      </div>
+      <nav class="nav-links">
+        <a href="#home" class="active">Home</a>
+        <a href="#about">About</a>
+        <a href="#projects">Projects</a>
+        <a href="#portfolio">Portfolio</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <div class="hamburger" onclick="toggleNavMenu(this)">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+      <div class="close-icon" onclick="closeNavMenu()">✕</div>
+    </div>
+  </header>
+
+  <section class="hero-section" id="home">
+    <main class="hero-main">
+      <h2>POWERING PROGRESS. BUILDING THE FUTURE.</h2>
+      <h1>Building Industrial &<br>Energy Assets for the Next Generation</h1>
+    </main>
+  </section>
+
+  <section class="about-section" id="about">
+    <div class="about-container">
+      <div class="about-content">
+        <h2>About</h2>
+        <p><br>
+        Building Industrial Power, One Venture at a Time<br>
+        From power plants to global metals and clean energy, a journey shaped by vision, risk, and action.</p>
+
+        <p><strong>Our Founder's Journey</strong></p>
+        <p><em>"I started at 20, not in a boardroom, but with a thermal power plant deal.</p>
+
+        <p>At just 20, I purchased a 35MW thermal power plant and sold it to a major chemical company.
+        That single move taught me more about business, risk, and negotiation than any classroom could.</p>
+
+        <p>Soon after, I founded G Jaiswal Ventures Pvt Ltd and entered commodity trading dealing in iron, copper, and aluminium.
+        One of my boldest decisions came when I acquired 600MW thermal power plant spares, valued at over $20 Million.
+        This inventory continues to be monetized strategically through industrial buyers.</p>
+
+        <p>My vision expanded globally when I became a Director and Equity Partner at ARDAU Community Waste Power Limited, a UK-based clean energy company.
+        Together with ARDAU, I'm now also developing a 150MW solar power plant in India, a major leap into renewable energy.</p>
+
+        <p>Simultaneously, I'm leading a nickel ore processing venture starting with imports from Indonesia, and planning to localize extraction within India once domestic reserves open up."</em></p>
+      </div>
+    </div>
+    <div class="about-images">
+      <img src="image4.jpg" alt="About Image 1">
+      <img src="image9.jpg" alt="About Image 2">
+    </div>
+  </section>
+  <div class="section-divider"></div>
+  <section class="projects-section" id="projects">
+  <div class="projects-header">
+    <h2>Current Projects</h2>
+    <h3>Real Work. Real Scale. In Progress.</h3>
+    <p>Every project listed here is in motion, live deals, engineering in progress, or assets being monetized. These are the ventures I’m actively building, supplying, or managing right now.</p>
+  </div>
+
+  <div class="project-category">
+    <h4>Ongoing Industrial & Energy Projects</h4>
+    <div class="projects-grid">
+      <div class="project-card">
+        <div class="project-badge">In Development</div>
+        <h5>150MW Solar Power Plant, India</h5>
+        <ul>
+          <li><strong>Partner:</strong> ARDAU Community Waste Power Ltd (UK)</li>
+          <li><strong>Stage:</strong> Land identification + grid feasibility underway</li>
+          <li><strong>Goal:</strong> Commercial power generation by 2026</li>
+          <li><strong>Location:</strong> Chhattisgarh</li>
+          <li><strong>Investment Size:</strong> $63 million</li>
+        </ul>
+      </div>
+
+      <div class="project-card">
+        <div class="project-badge">Active</div>
+        <h5>Thermal Power Plant Spares Monetization (600MW Inventory)</h5>
+        <ul>
+          <li><strong>Owner:</strong> G Jaiswal Ventures Pvt Ltd</li>
+          <li><strong>Asset Value:</strong> $20 million+</li>
+          <li><strong>Status:</strong> High-margin liquidation</li>
+          <li><strong>Clients:</strong> EPCs, foundries, OEMs</li>
+          <li><strong>Edge:</strong> Rare equipment, niche inventory</li>
+        </ul>
+      </div>
+
+      <div class="project-card">
+        <div class="project-badge">Phase 1</div>
+        <h5>Nickel Ore Import & Processing Unit</h5>
+        <ul>
+          <li><strong>Phase 1:</strong> Import from Indonesia</li>
+          <li><strong>Phase 2:</strong> Domestic mining (pending clearance)</li>
+          <li><strong>Use Cases:</strong> EV batteries, alloying, specialty steel</li>
+          <li><strong>Progress:</strong> Partner & plant shortlisting underway</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="project-category">
+    <h4>International Collaborations</h4>
+    <div class="projects-grid">
+      <div class="project-card">
+        <div class="project-badge">JV Project</div>
+        <h5>ARDAU Community Waste Power (UK)</h5>
+        <ul>
+          <li><strong>Role:</strong> Director & Equity Partner</li>
+          <li><strong>Project Type:</strong> Waste-to-energy + ESG power</li>
+          <li><strong>Status:</strong> Operational + UK contracts</li>
+        </ul>
+        <p>
+        <a href="https://ardau.energy/applications/waste-to-energy/" target="_blank" class="project-link-button">
+            Visit Project Website
+        </a>
+        </p>
+      </div>
+
+      <div class="project-card">
+        <div class="project-badge">Active</div>
+        <h5>Strategic Commodity Trade Lines</h5>
+        <ul>
+          <li><strong>Commodities:</strong> Iron, copper, aluminium</li>
+          <li><strong>Scope:</strong> Wholesale supply to Indian industry</li>
+          <li><strong>Structure:</strong> G Jaiswal Ventures Pvt Ltd</li>
+          <li><strong>Frequency:</strong> Seasonal, margin-optimized</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+      <div class="portfolio-category">
+      <h4>Past Projects</h4>
+      <div class="portfolio-grid past-projects-grid">
+        <div class="portfolio-card past-project-card">
+          <h5>35MW Thermal Power Plant (Sold)</h5>
+          <p><strong>Role:</strong> Owner → Seller</p>
+          <p><strong>Deal:</strong> Full asset sale to chemical company</p>
+          <p><strong>Significance:</strong> First major deal at age 20</p>
+        </div>
+      </div>
+    </div>
+ </section>
+
+  <section class="portfolio-section" id="portfolio">
+    <div class="portfolio-header">
+      <h2>Portfolio</h2>
+      <h3>Strategic Assets Across Power, Commodities, and Clean Energy</h3>
+      <p>Over the years, I've invested in, acquired, and developed high value ventures across India and the UK spanning energy, commodities, spares, and industrial infrastructure.</p>
+    </div>
+
+    <!-- <div class="portfolio-category">
+      <h4>Active Ventures</h4>
+      <div class="portfolio-grid">
+        <div class="portfolio-card">
+          <h5>G Jaiswal Ventures Pvt Ltd</h5>
+          <p><strong>Role:</strong> Founder & Director</p>
+          <p><strong>Sector:</strong> Commodity Trading, Asset Management, Industrial Spares</p>
+          <ul>
+            <li>Acquired & monetizing 600MW worth of thermal plant spares valued at ₹150 Cr+</li>
+            <li>Trading in iron, copper, aluminium</li>
+            <li>Supplying to EPC contractors, foundries, OEMs</li>
+          </ul>
+        </div>
+
+        <div class="portfolio-card">
+          <h5>150MW Solar Power Plant (India)</h5>
+          <p><strong>Role:</strong> Lead Developer (with ARDAU UK)</p>
+          <p><strong>Location:</strong> Chhattisgarh, India</p>
+          <p><strong>Stage:</strong> Feasibility & land acquisition</p>
+          <p><strong>Vision:</strong> Create one of India’s most efficient solar plants in partnership with ARDAU UK.</p>
+        </div>
+      </div>
+      <div class="portfolio-grid">
+        <div class="portfolio-card">
+          <h5>Nickel Ore Processing Project</h5>
+          <p><strong>Role:</strong> Promoter & Strategist</p>
+          <p><strong>Stage:</strong> Phase 1: Import → Phase 2: Domestic mining</p>
+          <ul>
+            <li>Initial import of nickel ore from Indonesia</li>
+            <li>Phase 2: Local processing once Indian reserves open</li>
+          </ul>
+          <p><strong>Use Case:</strong> Steel alloying, EV batteries, energy storage</p>
+        </div>
+
+        <div class="portfolio-card">
+          <h5>ARDAU Community Waste Power Limited (UK)</h5>
+          <p><strong>Role:</strong> Director & Equity Partner</p>
+          <p><strong>Focus:</strong> Waste-to-energy</p>
+          <p><strong>Location:</strong> London, UK</p>
+          <p><strong>Partners:</strong> Municipal bodies, ESG investors</p>
+        </div>
+      </div>
+    </div> -->
+
+
+  </section>
+
+  <div class="section-divider section-divider-projects"></div>
+  <div class="carousel-container">
+    <div class="carousel-slide active">
+      <img src="image1.jpg" alt="Slide 1">
+      <p class="carousel-caption">These are 600 MW equipment pairs stored within the same OEM containers, comprising critical components such as slurry pumps, LP and HP bypass valves, Voith couplings, globe valves, gate valves, coal monitoring systems, electrical actuators, and more. Primarily imported machinery, these units are essential for the operation and maintenance of thermal power plants. Sourced from leading manufacturers across the globe—including China, the UK, the USA, the Czech Republic, Germany, and other countries—they reflect a diverse and high-quality international supply chain.</p>
+    </div>
+    <div class="carousel-slide">
+      <img src="image2.jpg" alt="Slide 2">
+      <p class="carousel-caption">We have imported Laterite nickel ore from Indonesia specifically for research and development purposes. From this ore, we aim to produce valuable materials such as nickel, cobalt, and nickel pig iron. The processing will follow two distinct routes: the HPAL (High Pressure Acid Leach) method will be used to extract nickel and cobalt, while the conventional smelting process will be employed for producing nickel pig iron. This initiative marks a significant step towards advancing our in-house metallurgical capabilities.</p>
+    </div>
+    <div class="carousel-slide">
+      <img src="image3.jpg" alt="Slide 3">
+      <p class="carousel-caption">This is the 35 x 2 MW power plant that was originally operational in Korba, Chhattisgarh. After the plant went into liquidation, we acquired it through the liquidation process and successfully relocated it to Punjab. There, we revived and recommissioned the plant with the intent of putting valuable infrastructure back to work for the country. This marked the beginning of our journey in the power generation sector and laid the foundation for future projects.</p>
+    </div>
+    <div class="carousel-dots">
+      <span class="dot" onclick="currentSlide(0)"></span>
+      <span class="dot" onclick="currentSlide(1)"></span>
+      <span class="dot" onclick="currentSlide(2)"></span>
+    </div>
+  </div>
+
+
+
+
+
+  <section class="contact-section" id="contact">
+    <div class="projects-header">
+      <h2>Contact</h2>
+      <h3>Let's Connect & Collaborate</h3>
+      <p>If you have inquiries, partnership ideas, or want to discuss opportunities in energy, infrastructure, or commodities, reach out directly below.</p>
+    </div>
+    <div class="contact-form-wrapper">
+      <form action="mailto:gjaiswalventures@gmail.com" method="post" enctype="text/plain" class="contact-form">
+        <input type="text" name="name" placeholder="Your Name" required>
+        <input type="email" name="email" placeholder="Your Email" required>
+        <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+        <button type="submit">Send Message</button>
+      </form>
+    </div>
+  </section>
+
+<script>
+let currentIndex = 0;
+const slides = document.querySelectorAll('.carousel-slide');
+
+function showSlide(index) {
+  slides.forEach((slide, i) => {
+    slide.classList.toggle('active', i === index);
+  });
+
+  // Update dots
+  const dots = document.querySelectorAll('.carousel-dots .dot');
+  dots.forEach((dot, i) => {
+    dot.classList.toggle('active', i === index);
+  });
+}
+
+function prevSlide() {
+  currentIndex = (currentIndex - 1 + slides.length) % slides.length;
+  showSlide(currentIndex);
+}
+
+function nextSlide() {
+  currentIndex = (currentIndex + 1) % slides.length;
+  showSlide(currentIndex);
+}
+
+function currentSlide(index) {
+  currentIndex = index;
+  showSlide(currentIndex);
+}
+
+setInterval(() => {
+  currentIndex = (currentIndex + 1) % slides.length;
+  showSlide(currentIndex);
+}, 10000);
+
+showSlide(currentIndex);
+</script>
+  <script>
+    const navLinks = document.querySelectorAll('.nav-links a');
+
+    navLinks.forEach(link => {
+      link.addEventListener('click', function () {
+        navItems.forEach(l => l.classList.remove('active'));
+        this.classList.add('active');
+
+        if (window.innerWidth <= 768) {
+          closeNavMenu();
+        }
+      });
+    });
+  </script>
+<script>
+  const sections = document.querySelectorAll('section[id]');
+  const navItems = document.querySelectorAll('.nav-links a');
+
+  window.addEventListener('scroll', () => {
+    let scrollY = window.scrollY;
+
+    sections.forEach(section => {
+      const sectionTop = section.offsetTop - 100;
+      const sectionHeight = section.offsetHeight;
+      const sectionId = section.getAttribute('id');
+
+      if (scrollY >= sectionTop && scrollY < sectionTop + sectionHeight) {
+        navItems.forEach(link => {
+          link.classList.remove('active');
+          if (link.getAttribute('href') === `#${sectionId}`) {
+            link.classList.add('active');
+          }
+        });
+      }
+    });
+  });
+</script>
+<script>
+  function toggleNavMenu(element) {
+    const navContainer = document.querySelector('.nav-container');
+    const navLinks = document.querySelector('.nav-links');
+    const closeIcon = document.querySelector('.close-icon');
+
+    navContainer.classList.toggle('nav-open');
+    navLinks.classList.toggle('active');
+    element.style.display = 'none';
+    closeIcon.style.display = 'block';
+  }
+
+  function closeNavMenu() {
+    const navContainer = document.querySelector('.nav-container');
+    const navLinks = document.querySelector('.nav-links');
+    const hamburger = document.querySelector('.hamburger');
+    const closeIcon = document.querySelector('.close-icon');
+
+    navContainer.classList.remove('nav-open');
+    navLinks.classList.remove('active');
+    hamburger.style.display = 'flex';
+    closeIcon.style.display = 'none';
+  }
+</script>
+
+</body>
+  <footer class="minimal-footer">
+    <p>© G Jaiswal Ventures | Email: gjaiswalventures@gmail.com</p>
+  </footer>
+</html>
